@@ -4,7 +4,7 @@ import './navbar.css';
 const NavBar = () => {
   return (
     <div className="Outer-NavBar">
-      <Link className="nav-link" to="/Conferences">
+      <Link className="nav-link" to="/">
         Conferences
       </Link>
       <Link className="nav-link" to="/About/">
