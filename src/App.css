@@ -1,0 +1,11 @@
+.App {
+  background-color: #ecf7cc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+}
+
+.Main-Section {
+  background: #efefde;
+}
