@@ -1,6 +1,6 @@
 import React from 'react';
 import './Conferences.css';
-import BulletLogo from '../PNGs/elecLOGO.png';
+import BulletLogo from '../00_Public_Files/PNGs/elecLOGO.png';
 const UpcomingConf = () => {
   return (
     <div>

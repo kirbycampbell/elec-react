@@ -1,5 +1,6 @@
 .Outer-NavBar {
-  height: 40px;
+  height: 4vh;
+  min-height: 30px;
   background: #dee1a0;
   display: flex;
   justify-content: center;

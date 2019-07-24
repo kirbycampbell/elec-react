@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../PNGs/elecLOGO.png';
-import FBLogo from '../PNGs/GreenFBLogo.png';
+import Logo from '../../00_Public_Files/PNGs/elecLOGO.png';
+import FBLogo from '../../00_Public_Files/PNGs/GreenFBLogo.png';
 import './titlebar.css';
 
 const TitleBar = () => {

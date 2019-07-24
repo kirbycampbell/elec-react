@@ -1,5 +1,5 @@
 import React from 'react';
-import RockPhoto from '../PNGs/RockPhoto.png';
+import RockPhoto from '../../00_Public_Files/PNGs/RockPhoto.png';
 import './middleSection.css';
 const MiddleSection = () => {
   return (
