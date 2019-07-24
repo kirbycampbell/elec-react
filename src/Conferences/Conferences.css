@@ -51,3 +51,31 @@
   font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
   font-size: 12.5px;
 }
+
+@media all and (max-width: 700px) {
+  .Outer-Conference {
+    flex-direction: column;
+  }
+
+  .UpcomingConf {
+    width: 94%;
+    margin: auto;
+  }
+  .Conf-Info {
+    width: 94%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .bullet-logo {
+    margin-right: 10%;
+    margin-left: 5%;
+  }
+
+  .Conf-Detail {
+    width: 80%;
+    text-align: left;
+    color: #443410;
+    font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
+    font-size: 12.5px;
+  }
+}
