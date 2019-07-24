@@ -20,7 +20,9 @@ const TitleBar = () => {
         </div>
         <div className="Title-Social-Link">
           {' '}
-          <img src={FBLogo} alt="FBLogo" />
+          <a href="https://www.facebook.com/Environmental-Law-Education-Ctr-159745170712346/">
+            <img src={FBLogo} alt="FBLogo" />
+          </a>
         </div>
       </div>
     </div>
