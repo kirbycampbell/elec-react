@@ -3,9 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar/navbar';
 import TitleBar from './TitleBar/titlebar';
-import Test from './test';
 import MiddleSection from './MiddleSection/MiddleSection';
-import Test2 from './test2';
 import Conferences from './Conferences/Conferences';
 function App() {
   return (

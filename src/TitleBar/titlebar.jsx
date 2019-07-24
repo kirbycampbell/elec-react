@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Logo from '../elecLOGO.png';
-import FBLogo from '../GreenFBLogo.png';
+import React from 'react';
+import Logo from '../PNGs/elecLOGO.png';
+import FBLogo from '../PNGs/GreenFBLogo.png';
 import './titlebar.css';
 
 const TitleBar = () => {

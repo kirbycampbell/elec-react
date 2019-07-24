@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import RockPhoto from '../RockPhoto.png';
+import RockPhoto from '../PNGs/RockPhoto.png';
 import './middleSection.css';
 const MiddleSection = () => {
   return (
