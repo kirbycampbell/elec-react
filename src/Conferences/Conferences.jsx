@@ -2,6 +2,8 @@ import React from 'react';
 import './Conferences.css';
 import UpcomingConf from './UpcomingConf';
 import MiddleSection from '../01_Static_Components/MiddleSection/MiddleSection';
+import conferenceList from '../02_Data/ConferenceData';
+
 const Conferences = () => {
   return (
     <React.Fragment>
