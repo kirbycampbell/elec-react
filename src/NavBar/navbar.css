@@ -28,3 +28,10 @@
   color: #1f741b;
   background: rgba(45, 212, 45, 0.116);
 }
+
+@media all and (max-width: 870px) {
+  .nav-link {
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+}

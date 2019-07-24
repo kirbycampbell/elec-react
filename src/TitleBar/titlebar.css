@@ -36,3 +36,27 @@
   width: 10%;
   cursor: pointer;
 }
+
+.Main-Logo {
+  height: 100%;
+}
+
+@media all and (max-width: 870px) {
+  .Inner-Title {
+    width: 92%;
+  }
+  .Title-Logo {
+    width: 10%;
+  }
+  .Title-Text {
+    width: 90%;
+    font-size: calc(24px + 2 * ((100vw - 870px) / 700));
+  }
+  .Smaller-Title-Text {
+    font-size: calc(18px + 4 * ((100vw - 870px) / 700));
+  }
+  .Main-Logo {
+    height: 50px;
+    width: 50px;
+  }
+}

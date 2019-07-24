@@ -8,7 +8,7 @@ const TitleBar = () => {
     <div className="Outer-Title">
       <div className="Inner-Title">
         <div className="Title-Logo">
-          <img src={Logo} alt="ELEC_Logo" />
+          <img className="Main-Logo" src={Logo} alt="ELEC_Logo" />
         </div>
         <div className="Title-Text">
           {' '}
