@@ -19,7 +19,7 @@ const NavBar = () => {
       <Link className="nav-link" to="/Presentations/">
         Presentations
       </Link>
-      <Link className="nav-link" to="Register">
+      <Link className="nav-link" to="/Register">
         Register
       </Link>
     </div>
