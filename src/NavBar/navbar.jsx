@@ -1,6 +1,6 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import './navbar.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./navbar.css";
 const NavBar = () => {
   return (
     <div className="Outer-NavBar">
@@ -19,7 +19,7 @@ const NavBar = () => {
       <Link className="nav-link" to="/Presentations/">
         Presentations
       </Link>
-      <Link className="nav-link" to="Register">
+      <Link className="nav-link" to="/Register">
         Register
       </Link>
     </div>
