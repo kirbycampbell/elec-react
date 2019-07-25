@@ -4,14 +4,14 @@ import UpcomingConf from "../Conferences/UpcomingConf";
 import MiddleSection from "../01_Static_Components/MiddleSection/MiddleSection";
 // import conferenceList from '../02_Data/ConferenceData';
 
-const MainPage = () => {
+const MainPage = props => {
   return (
     <React.Fragment>
-      <MiddleSection />
+      <MiddleSection confList={props.confList} />
       <div className="Main-Section" style={{ minHeight: "34vh" }}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf confList={props.confList} />
           </div>
           <div className="Body-Right">
             The Environmental Law Education Center produces top quality

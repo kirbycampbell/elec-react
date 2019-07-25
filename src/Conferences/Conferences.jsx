@@ -1,25 +1,49 @@
-import React from 'react';
-import './Conferences.css';
-import UpcomingConf from './UpcomingConf';
-import MiddleSection from '../01_Static_Components/MiddleSection/MiddleSection';
+import React from "react";
+import "./Conferences.css";
+import UpcomingConf from "./UpcomingConf";
+import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 // import conferenceList from '../02_Data/ConferenceData';
 
-const Conferences = () => {
+const Conferences = props => {
   return (
     <React.Fragment>
-      <MiddleSection />
-      <div className="Main-Section" style={{minHeight: '34vh'}}>
+      <SmallMiddleSection />
+      <div className="Main-Section" style={{ minHeight: "34vh" }}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
             <UpcomingConf />
           </div>
           <div className="Body-Right">
-            The Environmental Law Education Center produces top quality
-            education opportunities for environmental professionals. Our
-            comprehensive conferences and intensive workshops bring together
-            diverse professionals to explore environmental laws, science, public
-            policies and complex technical solutions. We focus on the most
-            timely and important environmental issues.
+            <div>
+              <div className="ConfTitle">Upcoming Conferences</div>
+              {props.confList.map(conf => {
+                return (
+                  <div className="Conf-Card" key={conf.date}>
+                    <div className="Conf-Card-Title">{conf.title}</div>
+                    <div>{conf.org}</div>
+                    <div>{conf.info}</div>
+                    <div>{conf.topic}</div>
+                    <div>{conf.date}</div>
+                    <div>{conf.location}</div>
+                    <div>{conf.city}</div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="ConfTitle">Past Conferences</div>
+            {props.pastConfs.map(conf => {
+              return (
+                <div className="Conf-Card" key={conf.date}>
+                  <div className="Conf-Card-Title">{conf.title}</div>
+                  <div>{conf.org}</div>
+                  <div>{conf.info}</div>
+                  <div>{conf.topic}</div>
+                  <div>{conf.date}</div>
+                  <div>{conf.location}</div>
+                  <div>{conf.city}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

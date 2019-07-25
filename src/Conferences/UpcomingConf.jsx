@@ -1,7 +1,7 @@
-import React from 'react';
-import './Conferences.css';
-import BulletLogo from '../00_Public_Files/PNGs/elecLOGO.png';
-import {conferenceList} from '../02_Data/ConferenceData';
+import React from "react";
+import "./Conferences.css";
+import BulletLogo from "../00_Public_Files/PNGs/elecLOGO.png";
+import { conferenceList } from "../02_Data/ConferenceData";
 
 const UpcomingConf = () => {
   let confList = [];
@@ -19,7 +19,6 @@ const UpcomingConf = () => {
       }
     }
   }
-  console.log(confList);
 
   return (
     <div>
@@ -40,7 +39,7 @@ const UpcomingConf = () => {
                 <div>{conf.location}</div>
                 <div>{conf.city}</div>
               </div>
-            </div>{' '}
+            </div>{" "}
           </div>
         );
       })}
