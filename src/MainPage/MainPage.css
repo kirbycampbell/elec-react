@@ -1,0 +1,38 @@
+.Double-Column-Conf {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  min-height: 8vh;
+}
+
+.bullet-logo {
+  height: 20px;
+  width: 20px;
+  margin-right: 10%;
+  margin-left: 5%;
+}
+
+.Conf-Detail {
+  width: 80%;
+  text-align: left;
+  color: #443410;
+  font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
+  font-size: 12.5px;
+}
+
+@media all and (max-width: 700px) {
+  .bullet-logo {
+    margin-right: 10%;
+    margin-left: 5%;
+  }
+
+  .Conf-Detail {
+    width: 80%;
+    text-align: left;
+    color: #443410;
+    font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
+    font-size: 12.5px;
+  }
+}

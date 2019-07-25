@@ -2,14 +2,17 @@ import React from "react";
 import Logo from "../../00_Public_Files/PNGs/elecLOGO.png";
 import FBLogo from "../../00_Public_Files/PNGs/GreenFBLogo.png";
 import "./titlebar.css";
+import { NavLink } from "react-router-dom";
 
 const TitleBar = props => {
   return (
     <div className="Outer-Title">
       <div className="Inner-Title">
         <div className="Title-Logo">
-          <img className="Main-Logo" src={Logo} alt="ELEC_Logo" />
-        </div>
+          <NavLink to="/">
+            <img className="Main-Logo" src={Logo} alt="ELEC_Logo" />
+          </NavLink>
+        </div>{" "}
         <div className="Title-Text">
           {" "}
           ENVIRONMENTAL LAW EDUCATION CENTER
