@@ -10,9 +10,12 @@ import Locations from "./Locations/Locations";
 import MobileNav from "./01_Static_Components/MobileNav/MobileNav";
 import MainPage from "./MainPage/MainPage";
 import { conferenceList } from "./02_Data/ConferenceData";
+import Contact from "./Contact/Contact";
+import ConfPage from "./Conferences/ConfPage";
 
 function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [conference, setConference] = useState(null);
   let confList = [];
   let tempObj = {};
   let pastConfs = [];
@@ -35,7 +38,11 @@ function App() {
       }
     }
   }
-  console.log(pastConfs);
+
+  const setConf = conf => {
+    setConference(conf);
+    console.log("Called SetConf");
+  };
 
   return (
     <div className="App">
@@ -55,14 +62,23 @@ function App() {
               exact
               path="/Conferences/"
               render={props => (
-                <Conferences pastConfs={pastConfs} confList={confList} />
+                <Conferences
+                  pastConfs={pastConfs}
+                  confList={confList}
+                  setConf={setConf}
+                />
               )}
+            />
+            <Route
+              path="/Conferences/:id/"
+              component={ConfPage}
+              conference={conference}
             />
             <Route path="/About/" component={About} />
             <Route path="/Locations/" component={Locations} />
-            {/* <div>Test 222</div>
-            <Route path="/Contact/" component={Test} />
-            <Route path="/Presentations/" component={Test} />
+
+            <Route path="/Contact/" component={Contact} />
+            {/* <Route path="/Presentations/" component={Test} />
             <Route path="/Register/" component={Test} /> */}
           </div>
         </div>

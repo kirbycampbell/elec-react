@@ -7,7 +7,8 @@ export const conferenceList = {
     date: "December 9, 2019",
     location: "Washington State Convention Center",
     city: "Seattle Washington",
-    extra: ""
+    extra: "",
+    id: 500
   },
   Oct252019: {
     title: "TOXICS",
@@ -17,7 +18,8 @@ export const conferenceList = {
     date: "October 25, 2019",
     location: "Washington State Convention Center",
     city: "Seattle Washington",
-    extra: ""
+    extra: "",
+    id: 499
   },
   Sept122019: {
     title: "Advanced Superfund",
@@ -28,7 +30,8 @@ export const conferenceList = {
     location: "Washington State Convention Center",
     city: "Seattle Washington",
     extra:
-      " Green Remediation, Climate Change Adaption, Developing Resilient & Sustainable Cleanup Remedies"
+      " Green Remediation, Climate Change Adaption, Developing Resilient & Sustainable Cleanup Remedies",
+    id: 498
   },
   //:::::::::::::::::::::::::::::::::::::::::::::::::::
   //     ::::::::::: Past Conferences :::::::::::
@@ -42,7 +45,8 @@ export const conferenceList = {
     date: "May 17, 2019",
     location: "World Trade Center Two",
     city: "Portland, Oregon",
-    extra: "Creating a Vision for the Harbor and Moving Projects Forward"
+    extra: "Creating a Vision for the Harbor and Moving Projects Forward",
+    id: 497
   },
   May12019: {
     title: "Conference on Toxics",
@@ -53,6 +57,7 @@ export const conferenceList = {
     date: "May 1, 2019",
     location: "World Trade Center Two",
     city: "Portland, Oregon",
+    id: 496,
     extra:
       "Understanding the RISKS to Public Health and the Environment from TOXIC Contaminants"
   },
@@ -64,6 +69,7 @@ export const conferenceList = {
     date: "January 30, 2019",
     location: "World Trade Center Two",
     city: "Portland, Oregon",
+    id: 495,
     extra:
       "Liability & Apportionment Costs of Investigation & Remediation Benefits of Development Creating a Cost/Benefit Balance Moving Projects Forward..."
   },
@@ -75,6 +81,7 @@ export const conferenceList = {
     date: "October 22, 2018",
     location: "Washington Convention Center",
     city: "Seattle, Washington",
+    id: 494,
     extra: ""
   },
   Sept122018: {
@@ -85,6 +92,7 @@ export const conferenceList = {
     date: "September 12, 2018",
     location: "World Trade Center",
     city: "Portland, Oregon",
+    id: 493,
     extra:
       "Willamette River Sediments Dredging and Disposal Maintenance & Remediation Dredging Recontamination Assessments Portland Harbor Updates"
   },
@@ -96,6 +104,7 @@ export const conferenceList = {
     date: "June 1, 2018",
     location: "World Trade Center Two",
     city: "Portland, Oregon",
+    id: 492,
     extra:
       "Greenhouse Gases, Diesel, Air Toxics, Legal, Technical, Practical Advice"
   }

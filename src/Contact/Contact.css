@@ -1,0 +1,13 @@
+.Contact-Form-Outer {
+  height: 400px;
+  background-color: #ecf7cc;
+}
+
+.Form-Title {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0ffc4;
+  border: 1px solid rgba(0, 0, 0, 0.329);
+}
