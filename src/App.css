@@ -11,8 +11,8 @@
   flex-direction: row;
   background: #efefde;
   width: 98%;
-  padding: 1%;
   min-height: 61vh;
+  padding: 0px 1%;
   padding-top: 0%;
 }
 
@@ -33,7 +33,6 @@
   color: #376831;
   font-family: 'Sakkal Majalla';
   font-size: 24px;
-  max-height: 400px;
 }
 
 .Body-Right {
@@ -60,17 +59,20 @@ h1 {
 @media all and (max-width: 700px) {
   .Outer-Body {
     flex-direction: column;
+    width: 100%;
     min-height: 10vh;
   }
   .Body-Right {
-    width: 94%;
+    width: 96%;
     margin: auto;
-    margin-bottom: 10px;
-    margin-top: 1px;
-    padding: 2px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding: 2%;
   }
   .UpcomingConf {
-    width: 94%;
-    margin: 10px;
+    width: 100%;
+    margin: 0;
+    order: 2;
+    margin-bottom: 10px;
   }
 }

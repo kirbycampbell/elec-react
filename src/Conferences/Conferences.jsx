@@ -2,13 +2,13 @@ import React from 'react';
 import './Conferences.css';
 import UpcomingConf from './UpcomingConf';
 import MiddleSection from '../01_Static_Components/MiddleSection/MiddleSection';
-import conferenceList from '../02_Data/ConferenceData';
+// import conferenceList from '../02_Data/ConferenceData';
 
 const Conferences = () => {
   return (
     <React.Fragment>
       <MiddleSection />
-      <div className="Main-Section" style={{height: '34vh', minHeight: '34vh'}}>
+      <div className="Main-Section" style={{minHeight: '34vh'}}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
             <UpcomingConf />

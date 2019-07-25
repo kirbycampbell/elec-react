@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 3%;
+  min-height: 8vh;
 }
 
 .bullet-logo {
