@@ -43,13 +43,19 @@
   box-shadow: 5px 2px 12px rgba(0, 0, 0, 0.466);
 }
 .Conf-Card-Title {
-  font-weight: bold;
+  color: #376831;
+  font-family: "Sakkal Majalla";
+  font-size: 30px;
   margin-bottom: 8px;
   text-decoration: underline;
+  text-decoration-color: #3768317a;
   cursor: pointer;
   text-align: center;
 }
 
+.Conf-Card-Title:hover {
+  text-decoration-color: #275721cc;
+}
 @media all and (max-width: 700px) {
   .bullet-logo {
     margin-right: 10%;

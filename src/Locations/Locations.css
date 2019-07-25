@@ -1,0 +1,32 @@
+.Location-Section {
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 2px 12px rgba(0, 0, 0, 0.466);
+}
+
+.Location-Block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0px;
+}
+
+.Location-Info {
+  display: flex;
+  padding: 1%;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+.Location-Map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 80%;
+  margin-bottom: 3%;
+  overflow: hidden;
+}
