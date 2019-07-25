@@ -15,3 +15,9 @@
   color: #235920;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@media all and (max-width: 870px) {
+  .Inner-Footer {
+    font-size: 9px;
+  }
+}

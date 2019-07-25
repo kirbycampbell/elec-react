@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  transition: height 0.7s;
 }
 
 .nav-link {
@@ -17,7 +18,8 @@
   font-size: 20px;
   text-decoration: none;
   margin: 0px 10px;
-  font-family: 'Sakkal Majalla';
+  font-family: "Sakkal Majalla";
+  transition: font-size 0.7s;
 }
 
 .nav-link:hover {
@@ -32,7 +34,13 @@
 
 @media all and (max-width: 870px) {
   .nav-link {
-    font-size: 15px;
+    font-size: 0px;
     margin: 0px 5px;
+    transition: font-size 0.7s;
+  }
+  .Outer-NavBar {
+    min-height: 0px;
+    height: 0px;
+    transition: height 0.7s;
   }
 }

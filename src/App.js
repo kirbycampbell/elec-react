@@ -1,19 +1,22 @@
-import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import './App.css';
-import NavBar from './01_Static_Components/NavBar/navbar';
-import TitleBar from './01_Static_Components/TitleBar/titlebar';
-import Conferences from './Conferences/Conferences';
-import About from './About/About';
-import Footer from './01_Static_Components/Footer/Footer';
-import Locations from './Locations/Locations';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import NavBar from "./01_Static_Components/NavBar/navbar";
+import TitleBar from "./01_Static_Components/TitleBar/titlebar";
+import Conferences from "./Conferences/Conferences";
+import About from "./About/About";
+import Footer from "./01_Static_Components/Footer/Footer";
+import Locations from "./Locations/Locations";
+import MobileNav from "./01_Static_Components/MobileNav/MobileNav";
 function App() {
+  const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <div className="App">
-      <TitleBar />
+      <TitleBar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
       <Router>
         <div>
           <NavBar />
+          <MobileNav setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
           <div>
             <Route path="/" exact component={Conferences} />
             <Route path="/About/" component={About} />
