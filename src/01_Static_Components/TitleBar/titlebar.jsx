@@ -25,7 +25,7 @@ const TitleBar = props => {
               props.setMobileMenu(!props.mobileMenu);
             }}
           >
-            <div style={{ fontSize: "10px", marginTop: "-3px" }}>menu</div>
+            <div style={{ fontSize: "10px", marginTop: "-3px" }} />
 
             <i className="fas fa-bars" />
           </div>
