@@ -12,6 +12,7 @@ import MainPage from "./MainPage/MainPage";
 import { conferenceList } from "./02_Data/ConferenceData";
 import Contact from "./Contact/Contact";
 import ConfPage from "./Conferences/ConfPage";
+import Presentations from "./Presentations/Presentations";
 
 function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -78,7 +79,8 @@ function App() {
             <Route path="/Locations/" component={Locations} />
 
             <Route path="/Contact/" component={Contact} />
-            {/* <Route path="/Presentations/" component={Test} />
+            <Route path="/Presentations/" component={Presentations} />
+            {/* 
             <Route path="/Register/" component={Test} /> */}
           </div>
         </div>
