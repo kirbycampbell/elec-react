@@ -8,7 +8,7 @@ const MobileNav = props => {
     >
       <Link
         className="Mobile-nav-link"
-        to="/Conferences"
+        to="/Conferences/"
         onClick={() => {
           props.setMobileMenu(false);
         }}
