@@ -2,6 +2,7 @@ import React from "react";
 import UpcomingConf from "../Conferences/UpcomingConf";
 import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import { Presentations2017 } from "../02_Data/PresentationData";
+// import "../02_Data/pdf-presentations";
 
 const Presentations = () => {
   return (
@@ -17,9 +18,11 @@ const Presentations = () => {
             <div>
               {Presentations2017.map(pres => {
                 return (
-                  <a href={pres.pdf} key={pres.name} target="_blank">
-                    {pres.name}
-                  </a>
+                  <div key={pres.name}>
+                    <a href={`/../02_Data/pdf-presentations/${pres.pdf}`}>
+                      {pres.name}
+                    </a>
+                  </div>
                 );
               })}
             </div>
