@@ -1,21 +1,27 @@
-import React from "react";
-import "./Conferences.css";
-import UpcomingConf from "./UpcomingConf";
-import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
+import React, {useState} from 'react';
+import './Conferences.css';
+import UpcomingConf from './UpcomingConf';
+import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
 // import conferenceList from '../02_Data/ConferenceData';
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Conferences = props => {
+  const [more, setMore] = useState(4);
+  const handleMore = () => {
+    setMore(more + 2);
+  };
   return (
     <React.Fragment>
       <SmallMiddleSection />
-      <div className="Main-Section" style={{ minHeight: "34vh" }}>
+      <div className="Main-Section" style={{minHeight: '34vh'}}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
             <UpcomingConf />
           </div>
           <div className="Body-Right">
             <div>
+              {/* :::::::::::::: UPCOMING CONFERENCES ::::::::::::::: */}
+
               <div className="ConfTitle">Upcoming Conferences</div>
               {props.confList.map(conf => {
                 return (
@@ -33,12 +39,13 @@ const Conferences = props => {
                 );
               })}
             </div>
+            {/* :::::::::::::: PAST CONFERENCES ::::::::::::::: */}
             <div className="ConfTitle">Past Conferences</div>
-            {props.pastConfs.map(conf => {
+            {props.pastConfs.slice(0, more).map(conf => {
               return (
                 <div className="Conf-Card" key={conf.date}>
                   <div className="Conf-Card-Title">
-                    {" "}
+                    {' '}
                     <Link
                       to={`/Conferences/${conf.id}`}
                       onClick={() => props.setConf}
@@ -55,6 +62,11 @@ const Conferences = props => {
                 </div>
               );
             })}
+            {more < props.pastConfs.length && (
+              <div className="more-btn" onClick={handleMore}>
+                More Conferences
+              </div>
+            )}
           </div>
         </div>
       </div>
