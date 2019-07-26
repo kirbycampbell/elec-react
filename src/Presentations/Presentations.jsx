@@ -19,7 +19,12 @@ const Presentations = () => {
               {Presentations2017.map(pres => {
                 return (
                   <div key={pres.name}>
-                    <a href={`/../02_Data/pdf-presentations/${pres.pdf}`}>
+                    <a
+                      href={
+                        process.env.PUBLIC_URL +
+                        `/pdf-presentations/${pres.pdf}`
+                      }
+                    >
                       {pres.name}
                     </a>
                   </div>
