@@ -32,7 +32,7 @@
   padding-top: 10px;
   background: #ecf7cc;
   color: #376831;
-  font-family: "Sakkal Majalla";
+  font-family: 'Sakkal Majalla';
   font-size: 24px;
 }
 
@@ -44,7 +44,7 @@
   padding-top: 35px;
   width: 45%;
   text-align: left;
-  font-family: "Verdana";
+  font-family: 'Verdana';
   font-weight: 500;
   line-height: 15px;
   font-size: 14px;
@@ -52,9 +52,11 @@
 }
 
 h1 {
-  font-family: "Sakkal Majalla";
+  font-family: 'Sakkal Majalla';
   font-size: 38px;
+  line-height: 38px;
   color: #376831;
+  margin-top: 10px;
 }
 
 @media all and (max-width: 700px) {

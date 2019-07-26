@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./Conferences.css";
-import UpcomingConf from "./UpcomingConf";
-import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
-import { conferenceList } from "../02_Data/ConferenceData";
+import React from 'react';
+import './Conferences.css';
+import UpcomingConf from './UpcomingConf';
+import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
+import {conferenceList} from '../02_Data/ConferenceData';
 
-const ConfPage = ({ match }) => {
+const ConfPage = ({match}) => {
   let conf = {};
 
   for (var key in conferenceList) {
@@ -18,7 +18,7 @@ const ConfPage = ({ match }) => {
   return (
     <React.Fragment>
       <SmallMiddleSection />
-      <div className="Main-Section" style={{ minHeight: "34vh" }}>
+      <div className="Main-Section" style={{minHeight: '34vh'}}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
             <UpcomingConf />
