@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import UpcomingConf from "../Conferences/UpcomingConf";
 import "./Contact.css";
+
 var mailgun = require("mailgun.js");
 var mg = mailgun.client({
   username: "api",
-  key: process.env.mailgunAPIKEY
+  key: `${process.env.REACT_APP_KEY}`
 });
 
 const Contact = () => {
@@ -19,7 +20,6 @@ const Contact = () => {
   });
 
   const [success, setSuccess] = useState(null);
-
   const handleFormSubmit = event => {
     event.preventDefault();
     if (
@@ -37,17 +37,15 @@ const Contact = () => {
         cityStateZip: event.target.cityStateZip.value,
         comment: event.target.comment.value
       });
-      setSuccess(true);
     }
   };
 
   useEffect(() => {
     if (emailForm.name !== "") {
-      //console.log(emailForm);
       mg.messages
-        .create("sandboxd7bb518346c5448db819b674cbcc561e.mailgun.org", {
-          from: `ELEC User <${emailForm.email}>`,
-          to: ["jkirbycampbell@gmail.com"],
+        .create("sandboxe0be8744de3342afa055b7312a8ac166.mailgun.org", {
+          from: `${emailForm.email}`,
+          to: ["johnkirbycampbell@gmail.com"],
           subject: `Message from ${emailForm.name}`,
           text: `<div><h1>Message from ${emailForm.name}</h1><p>${
             emailForm.comment
@@ -60,7 +58,10 @@ const Contact = () => {
             emailForm.phone
           }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`
         })
-        .then(msg => console.log(msg)) // logs response data
+        .then(msg => {
+          console.log(msg);
+          setSuccess(true);
+        }) // logs response data
         .catch(err => console.log(err)); // logs any error
     }
   }, [emailForm]);
@@ -144,10 +145,10 @@ const Contact = () => {
                       placeholder="Write something.."
                     />
                     <input type="submit" value="Submit" />
-                    {success && <div>Email Sent</div>}
+                    {/* {success && <div>Email Sent</div>}
                     {success === false && (
                       <div>Fill in all required fields...</div>
-                    )}
+                    )} */}
                   </form>
                 </div>
               </div>
