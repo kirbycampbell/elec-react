@@ -1,45 +1,64 @@
-import React, {useState, useEffect} from 'react';
-import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
-import UpcomingConf from '../Conferences/UpcomingConf';
-import './Contact.css';
-var mailgun = require('mailgun.js');
+import React, { useState, useEffect } from "react";
+import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
+import UpcomingConf from "../Conferences/UpcomingConf";
+import "./Contact.css";
+var mailgun = require("mailgun.js");
 var mg = mailgun.client({
-  username: 'api',
-  key: '78dafe274acda12c310fcedad78f0601-f877bd7a-ad94151a',
+  username: "api",
+  key: process.env.mailgunAPIKEY
 });
 
 const Contact = () => {
   const [emailForm, setEmailForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    cityStateZip: '',
-    comment: '',
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    cityStateZip: "",
+    comment: ""
   });
+
+  const [success, setSuccess] = useState(null);
 
   const handleFormSubmit = event => {
     event.preventDefault();
-    setEmailForm({
-      name: event.target.name.value,
-      email: event.target.email.value,
-      phone: event.target.phone.value,
-      address: event.target.address.value,
-      cityStateZip: event.target.cityStateZip.value,
-      comment: event.target.comment.value,
-    });
+    if (
+      event.target.name.value === "" ||
+      event.target.email.value === "" ||
+      event.target.comment.value === ""
+    ) {
+      setSuccess(false);
+    } else {
+      setEmailForm({
+        name: event.target.name.value,
+        email: event.target.email.value,
+        phone: event.target.phone.value,
+        address: event.target.address.value,
+        cityStateZip: event.target.cityStateZip.value,
+        comment: event.target.comment.value
+      });
+      setSuccess(true);
+    }
   };
 
   useEffect(() => {
-    if (emailForm.name !== '') {
-      console.log(emailForm);
+    if (emailForm.name !== "") {
+      //console.log(emailForm);
       mg.messages
-        .create('sandboxd7bb518346c5448db819b674cbcc561e.mailgun.org', {
-          from: 'Excited User <johnkirbycampbell@gmail.com>',
-          to: ['jkirbycampbell@gmail.com'],
-          subject: 'Hitaaa',
-          text: 'Hello There - im testing out this email thing!',
-          html: '<h1>Hello There - im testing out this email thing!</h1>',
+        .create("sandboxd7bb518346c5448db819b674cbcc561e.mailgun.org", {
+          from: `ELEC User <${emailForm.email}>`,
+          to: ["jkirbycampbell@gmail.com"],
+          subject: `Message from ${emailForm.name}`,
+          text: `<div><h1>Message from ${emailForm.name}</h1><p>${
+            emailForm.comment
+          }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
+            emailForm.phone
+          }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`,
+          html: `<div><h1>Message from ${emailForm.name}</h1><p>${
+            emailForm.comment
+          }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
+            emailForm.phone
+          }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`
         })
         .then(msg => console.log(msg)) // logs response data
         .catch(err => console.log(err)); // logs any error
@@ -81,7 +100,7 @@ const Contact = () => {
                     // action="/action_page.php"
                     onSubmit={handleFormSubmit}
                   >
-                    <label>Your Name</label>
+                    <label>Your Name*</label>
                     <input
                       type="text"
                       id="name"
@@ -89,7 +108,7 @@ const Contact = () => {
                       placeholder="Your name.."
                     />
 
-                    <label>Email</label>
+                    <label>Email*</label>
                     <input
                       type="email"
                       id="email"
@@ -118,13 +137,17 @@ const Contact = () => {
                       placeholder="City, State, Zip"
                     />
 
-                    <label>Comment</label>
+                    <label>Comment*</label>
                     <textarea
                       id="text"
                       name="comment"
                       placeholder="Write something.."
                     />
                     <input type="submit" value="Submit" />
+                    {success && <div>Email Sent</div>}
+                    {success === false && (
+                      <div>Fill in all required fields...</div>
+                    )}
                   </form>
                 </div>
               </div>
