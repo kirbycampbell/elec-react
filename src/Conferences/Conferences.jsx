@@ -26,33 +26,18 @@ const Conferences = props => {
               {props.confList.map(conf => {
                 return (
                   <div className="Conf-Card" key={conf.date}>
-                    <div className="Conf-Card-Title">
+                    <div>
                       {conf.schedule && (
                         <Link
+                          className="Conf-Card-Title"
                           to={`/Conferences/${conf.id}`}
                           onClick={() => props.setConf}
                         >
                           {conf.title}
                         </Link>
-                      )}
-                      {/* <a
-                        href={
-                          process.env.PUBLIC_URL +
-                          `/pdf-agendas/${conf.pdf}`
-                        }
-                        className="pres-link"
-                      >
-                        {conf.title}
-                      </a> */}
+                      )}{" "}
                       {!conf.schedule && (
-                        <a
-                          href={
-                            process.env.PUBLIC_URL + `/pdf-agendas/${conf.pdf}`
-                          }
-                          className="pres-link"
-                        >
-                          {conf.title}
-                        </a>
+                        <div className="No-Sched">{conf.title}</div>
                       )}
                     </div>
                     <div>{conf.org}</div>
@@ -73,13 +58,23 @@ const Conferences = props => {
                   <div className="Conf-Card-Title">
                     {conf.schedule && (
                       <Link
+                        className="Conf-Card-Title"
                         to={`/Conferences/${conf.id}`}
                         onClick={() => props.setConf}
                       >
                         {conf.title}
                       </Link>
                     )}
-                    {!conf.schedule && <div>{conf.title}</div>}
+                    {!conf.schedule && (
+                      <a
+                        className="Conf-Card-Title"
+                        href={
+                          process.env.PUBLIC_URL + `/pdf-agendas/${conf.pdf}`
+                        }
+                      >
+                        {conf.title}
+                      </a>
+                    )}
                   </div>
                   <div>{conf.org}</div>
                   <div>{conf.info}</div>

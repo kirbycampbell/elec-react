@@ -193,7 +193,7 @@ export const conferenceList = {
       "Understanding the RISKS to Public Health and the Environment from TOXIC Contaminants"
   },
   Jan302019: {
-    title: "Oregon Supefund Conference",
+    title: "Oregon Superfund Conference",
     org: "CERCLA & Oregon Environmental Cleanup Law",
     info: "Law, Science & Public Policy ",
     topic: "Important Updates and Case Studies ",

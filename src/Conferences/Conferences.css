@@ -75,6 +75,17 @@
   height: 40px;
 }
 
+.No-Sched {
+  color: #376831;
+  font-family: "Sakkal Majalla";
+  font-size: 26px;
+  line-height: 26px;
+  margin-bottom: 8px;
+  cursor: auto;
+  text-decoration: underline;
+  text-decoration-color: #ffffff00;
+}
+
 .more-btn:hover {
   background: rgba(136, 116, 52, 0.178);
 }
