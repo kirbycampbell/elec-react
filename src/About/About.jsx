@@ -2,14 +2,14 @@ import React from "react";
 import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import UpcomingConf from "../Conferences/UpcomingConf";
 import "./About.css";
-const About = () => {
+const About = props => {
   return (
     <div>
       <SmallMiddleSection />
       <div className="Main-Section">
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf setConf={props.setConf} />
           </div>
 
           <div className="Body-Right">

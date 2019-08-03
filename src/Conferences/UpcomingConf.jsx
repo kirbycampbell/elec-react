@@ -2,8 +2,9 @@ import React from "react";
 import "./Conferences.css";
 import BulletLogo from "../00_Public_Files/PNGs/elecLOGO.png";
 import { conferenceList } from "../02_Data/ConferenceData";
+import { Link } from "react-router-dom";
 
-const UpcomingConf = () => {
+const UpcomingConf = props => {
   let confList = [];
   let tempObj = {};
 
@@ -31,7 +32,15 @@ const UpcomingConf = () => {
               <img className="bullet-logo" src={BulletLogo} alt="Small-Logo" />
 
               <div className="Conf-Detail">
-                <div>{conf.title}</div>
+                {conf.schedule && (
+                  <Link
+                    to={`/Conferences/${conf.id}`}
+                    onClick={() => props.setConf}
+                  >
+                    {conf.title}
+                  </Link>
+                )}
+                {!conf.schedule && <div>{conf.title}</div>}
                 <div>{conf.org}</div>
                 <div>{conf.info}</div>
                 <div>{conf.topic}</div>

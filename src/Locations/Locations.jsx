@@ -1,18 +1,18 @@
-import React from 'react';
-import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
-import UpcomingConf from '../Conferences/UpcomingConf';
-import Portland from './images/World-Trade-Center-Portland.jpg';
-import Washington from './images/Washington-State-Convention-Center.jpg';
-import './Locations.css';
+import React from "react";
+import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
+import UpcomingConf from "../Conferences/UpcomingConf";
+import Portland from "./images/World-Trade-Center-Portland.jpg";
+import Washington from "./images/Washington-State-Convention-Center.jpg";
+import "./Locations.css";
 
-const Locations = () => {
+const Locations = props => {
   return (
     <div>
       <SmallMiddleSection />
-      <div className="Main-Section" style={{minHeight: '34vh'}}>
+      <div className="Main-Section" style={{ minHeight: "34vh" }}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf setConf={props.setConf} />
           </div>
 
           <div className="Body-Right">
@@ -50,8 +50,8 @@ const Locations = () => {
                 width="98%"
                 height="300px"
                 margin="2%"
-                style={{border: '0'}}
-              />{' '}
+                style={{ border: "0" }}
+              />{" "}
               <br /> <br />
             </div>
             <div className="Location-Section">
@@ -75,7 +75,7 @@ const Locations = () => {
                     src={Washington}
                     alt="Washington State Convention Center "
                   />
-                </div>{' '}
+                </div>{" "}
               </div>
               The Washington State Convention Center is located right in the
               heart of downtown Seattle. The Center features on-site parking,
@@ -89,8 +89,8 @@ const Locations = () => {
                 width="98%"
                 height="300px"
                 margin="2%"
-                style={{border: '0'}}
-              />{' '}
+                style={{ border: "0" }}
+              />{" "}
               <br />
               <br />
               <br />

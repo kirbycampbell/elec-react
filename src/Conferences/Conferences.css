@@ -18,7 +18,7 @@
   width: 80%;
   text-align: left;
   color: #443410;
-  font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
+  font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
   font-size: 12.5px;
 }
 
@@ -44,7 +44,7 @@
 }
 .Conf-Card-Title {
   color: #376831;
-  font-family: 'Sakkal Majalla';
+  font-family: "Sakkal Majalla";
   font-size: 26px;
   margin-bottom: 8px;
   text-decoration: underline;
@@ -64,7 +64,7 @@
   align-items: center;
   color: #376831;
   cursor: pointer;
-  font-family: 'Sakkal Majalla';
+  font-family: "Sakkal Majalla";
   font-size: 30px;
   font-weight: bold;
   box-shadow: 5px 2px 12px rgba(0, 0, 0, 0.466);
@@ -88,7 +88,7 @@
     width: 80%;
     text-align: left;
     color: #443410;
-    font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
+    font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
     font-size: 12.5px;
   }
 }

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import './Conferences.css';
-import UpcomingConf from './UpcomingConf';
-import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
+import React, { useState } from "react";
+import "./Conferences.css";
+import UpcomingConf from "./UpcomingConf";
+import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 // import conferenceList from '../02_Data/ConferenceData';
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Conferences = props => {
   const [more, setMore] = useState(4);
@@ -13,10 +13,10 @@ const Conferences = props => {
   return (
     <React.Fragment>
       <SmallMiddleSection />
-      <div className="Main-Section" style={{minHeight: '34vh'}}>
+      <div className="Main-Section" style={{ minHeight: "34vh" }}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf setConf={props.setConf} />
           </div>
           <div className="Body-Right">
             <div>
@@ -27,7 +27,33 @@ const Conferences = props => {
                 return (
                   <div className="Conf-Card" key={conf.date}>
                     <div className="Conf-Card-Title">
-                      <Link to={`/Conferences/${conf.id}`}>{conf.title}</Link>
+                      {conf.schedule && (
+                        <Link
+                          to={`/Conferences/${conf.id}`}
+                          onClick={() => props.setConf}
+                        >
+                          {conf.title}
+                        </Link>
+                      )}
+                      {/* <a
+                        href={
+                          process.env.PUBLIC_URL +
+                          `/pdf-agendas/${conf.pdf}`
+                        }
+                        className="pres-link"
+                      >
+                        {conf.title}
+                      </a> */}
+                      {!conf.schedule && (
+                        <a
+                          href={
+                            process.env.PUBLIC_URL + `/pdf-agendas/${conf.pdf}`
+                          }
+                          className="pres-link"
+                        >
+                          {conf.title}
+                        </a>
+                      )}
                     </div>
                     <div>{conf.org}</div>
                     <div>{conf.info}</div>
@@ -45,13 +71,15 @@ const Conferences = props => {
               return (
                 <div className="Conf-Card" key={conf.date}>
                   <div className="Conf-Card-Title">
-                    {' '}
-                    <Link
-                      to={`/Conferences/${conf.id}`}
-                      onClick={() => props.setConf}
-                    >
-                      {conf.title}
-                    </Link>
+                    {conf.schedule && (
+                      <Link
+                        to={`/Conferences/${conf.id}`}
+                        onClick={() => props.setConf}
+                      >
+                        {conf.title}
+                      </Link>
+                    )}
+                    {!conf.schedule && <div>{conf.title}</div>}
                   </div>
                   <div>{conf.org}</div>
                   <div>{conf.info}</div>

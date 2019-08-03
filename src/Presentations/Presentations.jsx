@@ -1,22 +1,22 @@
-import React from 'react';
-import UpcomingConf from '../Conferences/UpcomingConf';
-import SmallMiddleSection from '../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
+import React from "react";
+import UpcomingConf from "../Conferences/UpcomingConf";
+import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import {
   Presentations2017,
   Presentations2016,
   Presentations2015,
-  Presentations2014,
-} from '../02_Data/PresentationData';
-import './Presentations.css';
+  Presentations2014
+} from "../02_Data/PresentationData";
+import "./Presentations.css";
 
-const Presentations = () => {
+const Presentations = props => {
   return (
     <React.Fragment>
       <SmallMiddleSection />
-      <div className="Main-Section" style={{minHeight: '34vh'}}>
+      <div className="Main-Section" style={{ minHeight: "34vh" }}>
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf setConf={props.setConf} />
           </div>
           <div className="Pres-Body-Right">
             <div>

@@ -2,14 +2,9 @@ import React, { useState, useEffect } from "react";
 import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import UpcomingConf from "../Conferences/UpcomingConf";
 import "./Contact.css";
+import axios from "axios";
 
-var mailgun = require("mailgun.js");
-var mg = mailgun.client({
-  username: "api",
-  key: `${process.env.REACT_APP_KEY}`
-});
-
-const Contact = () => {
+const Contact = props => {
   const [emailForm, setEmailForm] = useState({
     name: "",
     email: "",
@@ -42,27 +37,12 @@ const Contact = () => {
 
   useEffect(() => {
     if (emailForm.name !== "") {
-      mg.messages
-        .create("sandboxe0be8744de3342afa055b7312a8ac166.mailgun.org", {
-          from: `${emailForm.email}`,
-          to: ["johnkirbycampbell@gmail.com"],
-          subject: `Message from ${emailForm.name}`,
-          text: `<div><h1>Message from ${emailForm.name}</h1><p>${
-            emailForm.comment
-          }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
-            emailForm.phone
-          }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`,
-          html: `<div><h1>Message from ${emailForm.name}</h1><p>${
-            emailForm.comment
-          }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
-            emailForm.phone
-          }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`
-        })
-        .then(msg => {
-          console.log(msg);
-          setSuccess(true);
-        }) // logs response data
-        .catch(err => console.log(err)); // logs any error
+      const emailTheForm = async () => {
+        await axios.post("http://localhost:5000/api/email/", {
+          emailForm
+        });
+      };
+      emailTheForm();
     }
   }, [emailForm]);
 
@@ -72,7 +52,7 @@ const Contact = () => {
       <div className="Main-Section">
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <UpcomingConf />
+            <UpcomingConf setConf={props.setConf} />
           </div>
 
           <div className="Body-Right">
@@ -95,12 +75,8 @@ const Contact = () => {
             <div className="Contact-Form-Outer">
               <div className="Form-Title">Contact Us Online</div>
               <div>
-                <p>Contact Me</p>
                 <div>
-                  <form
-                    // action="/action_page.php"
-                    onSubmit={handleFormSubmit}
-                  >
+                  <form onSubmit={handleFormSubmit}>
                     <label>Your Name*</label>
                     <input
                       type="text"

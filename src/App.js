@@ -13,6 +13,7 @@ import { conferenceList } from "./02_Data/ConferenceData";
 import Contact from "./Contact/Contact";
 import ConfPage from "./Conferences/ConfPage";
 import Presentations from "./Presentations/Presentations";
+import Register from "./Conferences/Register/Register";
 
 function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -57,7 +58,9 @@ function App() {
             <Route
               exact
               path="/"
-              render={props => <MainPage confList={confList} />}
+              render={props => (
+                <MainPage confList={confList} setConf={setConf} />
+              )}
             />
             <Route
               exact
@@ -75,13 +78,22 @@ function App() {
               component={ConfPage}
               conference={conference}
             />
-            <Route path="/About/" component={About} />
-            <Route path="/Locations/" component={Locations} />
+            <Route path="/About/" component={About} setConf={setConf} />
+            <Route path="/Locations/" component={Locations} setConf={setConf} />
 
-            <Route path="/Contact/" component={Contact} />
-            <Route path="/Presentations/" component={Presentations} />
-            {/* 
-            <Route path="/Register/" component={Test} /> */}
+            <Route path="/Contact/" component={Contact} setConf={setConf} />
+            <Route
+              path="/Presentations/"
+              component={Presentations}
+              setConf={setConf}
+            />
+
+            <Route
+              path="/Register/"
+              render={props => (
+                <Register conf={confList[0]} setConf={setConf} />
+              )}
+            />
           </div>
         </div>
       </Router>
