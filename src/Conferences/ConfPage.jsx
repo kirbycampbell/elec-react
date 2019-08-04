@@ -28,7 +28,9 @@ const ConfPage = ({match}) => {
           </div>
           <div className="Body-Right">
             <div className="Conf-Page-Title">{conf.title}</div>
-            <div className="Conf-Page-Org">{conf.org}</div>
+            <div className="Conf-Page-Org">
+              {conf.org} + {conf.info} + {conf.topic}
+            </div>
             <div className="Conf-Page-Extra">{conf.extra}</div>
             <div>
               {conf.schedule.map (c => {

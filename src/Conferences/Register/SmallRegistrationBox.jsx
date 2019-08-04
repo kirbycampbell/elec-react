@@ -21,10 +21,16 @@ const SmallRegistrationBox = props => {
               <div className="Small-Text-Box">
                 Register online w/o credit card (mail check):
               </div>
-              <button className="Small-Box-BTN">Register</button>
+              <button className="Small-Box-BTN">
+                {' '}  <Link to="/Register-Offline/">Register</Link>
+              </button>
             </div>
             <div className="Register-Section">
-              <div className="Small-Text-Box">Registration by fax or mail:</div>
+              <div className="Small-Text-Box">
+
+                Registration by fax or mail:
+
+              </div>
               <button className="Small-Box-BTN">
                 <a href={process.env.PUBLIC_URL + `/agenda-pdfs/${props.reg}`}>
                   Printable Form
