@@ -1,0 +1,36 @@
+.Outer-Small-Box {
+  width: 100%;
+  padding-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  padding-bottom: 20px;
+}
+.Title-Small-Box {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.Inner-Small-Box {
+  width: 80%;
+  margin: auto;
+  padding: 10px 0px;
+  background: rgba(191, 224, 163, 0.308);
+  font-size: 13px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px 1px rgba(22, 78, 22, 0.144);
+}
+.Register-Section {
+  margin: 20px 0px;
+}
+.Small-Text-Box {
+}
+
+.Small-Box-BTN {
+  margin-top: 4px;
+  background: rgba(247, 242, 242, 0.795);
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-radius: 5px;
+  padding: 9px;
+  cursor: pointer;
+}

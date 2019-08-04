@@ -1,0 +1,48 @@
+input.Input-Style {
+  width: 100%;
+  height: 35px;
+  margin: 6px 0px;
+  padding: 0px 10px;
+}
+.Topic-Title-Reg {
+  font-family: 'Sakkal Majalla';
+  font-size: 38px;
+  line-height: 38px;
+  color: #376831;
+}
+
+.Top-Topic {
+  margin: 10px 0px;
+  font-size: 14px;
+  color: #306e27;
+}
+
+.Info-Section {
+  line-height: 17px;
+}
+.Register-Title {
+  text-align: center;
+}
+
+.Outer-Form {
+  margin: 20px 0px;
+  background: rgba(95, 175, 70, 0.315);
+  padding: 20px 50px;
+}
+.Tiny-Text {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px;
+}
+
+.Bigger-Text {
+  font-size: 17px;
+  text-align: center;
+  margin: 10px;
+}
+.Radio-Section {
+  background: rgba(79, 194, 75, 0.137);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0px;
+}

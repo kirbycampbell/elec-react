@@ -27,8 +27,21 @@
   flex-direction: column;
   width: 70%;
   padding: 10px;
+  line-height: 25px;
 }
 .Time {
   width: 20%;
   padding: 10px;
+}
+
+.odd-style {
+  color: #376831;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.even-style {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
 }
