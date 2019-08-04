@@ -35,7 +35,10 @@ const RegisterOffline = props => {
             </Link>
             <div className="Outer-Form">
               <form
-                action="check-submit-2019-09-12-advanced-superfund.php"
+                action={
+                  process.env.PUBLIC_URL +
+                    '/check-submit-2019-09-12-advanced-superfund.php'
+                }
                 method="post"
               >
 
