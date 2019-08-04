@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import SmallMiddleSection
   from '../../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
-import UpcomingConf from '../UpcomingConf';
 import SmallRegistrationBox from './SmallRegistrationBox';
 import './Register.css';
 

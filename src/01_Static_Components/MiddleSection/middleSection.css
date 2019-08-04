@@ -62,8 +62,11 @@
 }
 
 @media all and (max-width: 800px) {
+  .Outer-Rock {
+    height: 45vh;
+  }
   .Outer-Next-Conf {
-    height: 30%;
+    height: 38%;
     width: 60%;
     max-width: 500px;
     margin-left: 5%;

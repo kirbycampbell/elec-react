@@ -18,8 +18,62 @@
   width: 80%;
   text-align: left;
   color: #443410;
-  font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
+  font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
   font-size: 12.5px;
+}
+
+/* :::::  Slide CSS ::::::: */
+
+.Outer-Slide {
+  width: 100%;
+  min-width: 300px;
+  margin-bottom: 30px;
+}
+.slide-container {
+  width: 70%;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.each-slide > img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  width: 100%;
+  max-width: 460px;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.each-fade {
+  display: flex;
+}
+
+.each-fade .image-container {
+  width: 75%;
+  overflow: hidden;
+}
+
+.each-fade .image-container img {
+  width: 100%;
+}
+
+.each-fade h2 {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: #adceed;
 }
 
 @media all and (max-width: 700px) {
@@ -32,7 +86,13 @@
     width: 80%;
     text-align: left;
     color: #443410;
-    font-family: "Verdana", Verdana, "Geneva", Tahoma, sans-serif;
+    font-family: 'Verdana', Verdana, 'Geneva', Tahoma, sans-serif;
     font-size: 12.5px;
+  }
+  .slide-container {
+    display: none;
+  }
+  .Outer-Slide {
+    margin-bottom: 0px;
   }
 }
