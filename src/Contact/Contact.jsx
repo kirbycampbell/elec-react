@@ -38,9 +38,19 @@ const Contact = props => {
   useEffect(() => {
     if (emailForm.name !== "") {
       const emailTheForm = async () => {
-        await axios.post("http://localhost:5000/api/email/", {
-          emailForm
-        });
+        await axios
+          .post("http://localhost:5000/api/email/", {
+            // await axios.post(
+            //   "https://master.d3u91gpoa9xh2v.amplifyapp.com/api/email/",
+            //   {
+            emailForm
+          })
+          .then(res => {
+            setSuccess(true);
+          })
+          .catch(err => {
+            setSuccess(false);
+          });
       };
       emailTheForm();
     }
@@ -121,10 +131,8 @@ const Contact = props => {
                       placeholder="Write something.."
                     />
                     <input type="submit" value="Submit" />
-                    {/* {success && <div>Email Sent</div>}
-                    {success === false && (
-                      <div>Fill in all required fields...</div>
-                    )} */}
+                    {success === true && <div>Email Sent!</div>}
+                    {success === false && <div>Failed to Send!</div>}
                   </form>
                 </div>
               </div>

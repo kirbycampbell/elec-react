@@ -15,7 +15,6 @@ const ConfPage = ({ match }) => {
       }
     }
   }
-  console.log(conf);
 
   return (
     <React.Fragment>
@@ -36,37 +35,61 @@ const ConfPage = ({ match }) => {
                 return (
                   <div className="Time-Section" key={c[0]}>
                     <div className="Conf-Split">
-                      <div className="Time">{c[0]}</div>
+                      <div className="Time" key={c[0]}>
+                        {c[0]}
+                      </div>
                       <div className="Flex-Col">
                         <div className="Conf-Sec-Title" />
                         {c.map(function(con, index) {
                           if (index > 0) {
                             if (con.title) {
                               return (
-                                <div className="Conf-Sec-Title">
+                                <div
+                                  key={con.title + index}
+                                  className="Conf-Sec-Title"
+                                >
                                   {con.title}
                                 </div>
                               );
                             } else if (con.speaker) {
                               return (
-                                <div className="Conf-Speaker">
+                                <div
+                                  key={con.speaker + index}
+                                  className="Conf-Speaker"
+                                >
                                   {con.speaker}
                                 </div>
                               );
                             } else if (con.cred) {
                               return (
-                                <div className="Conf-Cred">{con.cred}</div>
+                                <div
+                                  key={con.cred + index}
+                                  className="Conf-Cred"
+                                >
+                                  {con.cred}
+                                </div>
                               );
                             } else if (con.bullet) {
                               return (
-                                <li className="Conf-Bullet">{con.bullet}</li>
+                                <li
+                                  key={con.bullet + index}
+                                  className="Conf-Bullet"
+                                >
+                                  {con.bullet}
+                                </li>
                               );
                             } else if (con.break) {
                               return (
-                                <div className="Conf-Break">{con.break}</div>
+                                <div
+                                  key={con.break + index}
+                                  className="Conf-Break"
+                                >
+                                  {con.break}
+                                </div>
                               );
                             }
                           }
+                          return null;
                         })}
                       </div>
                     </div>

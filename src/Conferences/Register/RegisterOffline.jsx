@@ -1,15 +1,13 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import SmallMiddleSection
-  from '../../01_Static_Components/SmallMiddleSection/SmallMiddleSection';
-import SmallRegistrationBox from './SmallRegistrationBox';
-import './Register.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import SmallMiddleSection from "../../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
+import SmallRegistrationBox from "./SmallRegistrationBox";
+import "./Register.css";
 
 const RegisterOffline = props => {
-  console.log (props);
   return (
     <div>
-      {' '}
+      {" "}
       <SmallMiddleSection />
       <div className="Main-Section">
         <div className="Outer-Body">
@@ -37,11 +35,10 @@ const RegisterOffline = props => {
               <form
                 action={
                   process.env.PUBLIC_URL +
-                    '/check-submit-2019-09-12-advanced-superfund.php'
+                  "/check-submit-2019-09-12-advanced-superfund.php"
                 }
                 method="post"
               >
-
                 <div>
                   <input type="hidden" name="ssl_merchant_id" value="514710" />
                   <input type="hidden" name="ssl_user_id" value="website" />
@@ -174,7 +171,6 @@ const RegisterOffline = props => {
                       placeholder="Phone"
                     />
                     <div className="Radio-Section">
-
                       <input type="radio" name="ssl_amount" value="550.00" />
                       $550 early registration
                       <br />
@@ -185,13 +181,15 @@ const RegisterOffline = props => {
                       $450 government &amp; non-profit rate
                       <br />
                       <input type="radio" name="ssl_amount" value="495.00" />
-                      $495 government & non-profit received after
-                      August 30, 2019
+                      $495 government & non-profit received after August 30,
+                      2019
                       <br />
                       <div className="Tiny-Text">
-                        QUESTIONS: 503/282-5220
-                        Registration Secured by Evalon
-                        Cancellation: Refunds, less $50, will be made for cancellations received in writing by September 6, 2019. MCLE Credits available for members of the Oregon State Bar.
+                        QUESTIONS: 503/282-5220 Registration Secured by Evalon
+                        Cancellation: Refunds, less $50, will be made for
+                        cancellations received in writing by September 6, 2019.
+                        MCLE Credits available for members of the Oregon State
+                        Bar.
                       </div>
                       <input
                         name="submit"
