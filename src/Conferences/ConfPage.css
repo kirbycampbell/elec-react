@@ -35,7 +35,7 @@
   width: 20%;
   font-weight: bold;
   padding-left: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-right: 5px;
   border-right: 1px solid rgba(0, 0, 0, 0.205);
 }
@@ -72,5 +72,5 @@
   font-size: 13px;
   color: black;
   font-weight: bold;
-  margin-top: 16px;
+  margin-top: 6px;
 }

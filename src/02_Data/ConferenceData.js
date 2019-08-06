@@ -155,67 +155,114 @@ export const conferenceList = {
     extra: "Creating a Vision for the Harbor and Moving Projects Forward",
     id: 497,
     schedule: [
-      ["8:30-8:50", "Registration & Continental Breakfast"],
+      ["8:30-8:50", { break: "Registration & Continental Breakfast" }],
       [
         "8:50-9:00",
-        "Welcome and Conference Overview",
-        "HOLLY DUNCAN",
-        "Environmental Law Education Center"
+        { title: "Welcome and Conference Overview" },
+        { speaker: "HOLLY DUNCAN" },
+        { cred: "Environmental Law Education Center" }
       ],
       [
         "9:00-10:00",
-        "FEDERAL & STATE GOVERNMENT PRIORITIES & ACTIONS",
-        "National Superfund Policies & Priorities & the Portland Harbor",
-        "Cyndy Mackey - Director, Office of Site Remediation Enforcement - Office of Enforcement and Compliance Assurance - United State Environmental Protection Agency",
-        "Portland Harbor: Legislation, Funding and the Governor’s Priorities",
-        "Jim McKenna - Portland Harbor Policy Analyst - Office of Governor Kate Brown"
+        { title: "FEDERAL & STATE GOVERNMENT PRIORITIES & ACTIONS" },
+        {
+          bullet:
+            "National Superfund Policies & Priorities & the Portland Harbor"
+        },
+        { speaker: "Cyndy Mackey" },
+        {
+          cred:
+            "Director, Office of Site Remediation Enforcement - Office of Enforcement and Compliance Assurance"
+        },
+        { cred: "United States Environmental Protection Agency" },
+        {
+          bullet:
+            "Portland Harbor: Legislation, Funding and the Governor’s Priorities"
+        },
+        { speaker: "Jim McKenna" },
+        { cred: "Portland Harbor Policy Analyst" },
+        { cred: "Office of Governor Kate Brown" }
       ],
-      ["10:00-10:30", "Break"],
+      ["10:00-10:30", { break: "Break" }],
       [
         "10:30-12:00",
-        "LEGISLATION, REGULATION & LIABILITY PROTECTION TO PROMOTE REDEVELOPMENT",
-        "Brownfields Legal and Financial Incentives for Redevelopment: What Works; What Doesn’t!",
-        "David Ashton - Assistant General Counsel - Port of Portland",
-        "Report from the 2019 Oregon Legislative Session: Legislation and Incentives to Promote Redevelopmen",
-        "Randy Tucker - Legislative Affairs Manager Metro",
-        "Financial & Regulatory Incentives to Encourage Redevelopment: Liability Releases & Prospective Purchaser Agreements",
-        "Cheyenne Chapman, JD, LLM - Legal Policy Analyst, Land Quality Division - Oregon Department of Environmental Quality"
+        {
+          title:
+            "LEGISLATION, REGULATION & LIABILITY PROTECTION TO PROMOTE REDEVELOPMENT"
+        },
+        {
+          bullet:
+            "Brownfields Legal and Financial Incentives for Redevelopment: What Works; What Doesn’t!"
+        },
+        { speaker: "David Ashton" },
+        { cred: "Assistant General Counsel" },
+        { cred: "Port of Portland" },
+        {
+          bullet:
+            "Report from the 2019 Oregon Legislative Session: Legislation and Incentives to Promote Redevelopment"
+        },
+        { speaker: "Randy Tucker" },
+        { cred: "Legislative Affairs Manager Metro" },
+        {
+          bullet:
+            "Financial & Regulatory Incentives to Encourage Redevelopment: Liability Releases & Prospective Purchaser Agreements"
+        },
+        { speaker: "Cheyenne Chapman, JD, LLM" },
+        { cred: "Legal Policy Analyst, Land Quality Division" },
+        { cred: "Oregon Department of Environmental Quality" }
       ],
-      ["12:00-1:00", "Lunch (Provided)"],
+      ["12:00-1:00", { break: "Lunch (Provided)" }],
       [
         "1:00-2:00",
-        "CASE STUDIES",
-        "McCormick & Baxter - Obstacles & Opportunities",
-        'Historical Perspective to “Ready for Reuse"',
-        "Kevin Parrett & Sarah Miller - Environmental Cleanup, Northwest Region - Oregon Department of Environmental Quality",
-        "Former Portland Gas Manufacturing Site",
-        "Implementation of Remedial Action & Next Steps",
-        "Sarah Greenfield & Heidi Nelson - Project Managers, Northwest region - Oregon Department of Environmental Quality"
+        { title: "CASE STUDIES" },
+        { bullet: "McCormick & Baxter - Obstacles & Opportunities" },
+        { bullet: 'Historical Perspective to “Ready for Reuse"' },
+        { speaker: "Kevin Parrett & Sarah Miller" },
+        { cred: "Environmental Cleanup, Northwest Region" },
+        { cred: "Oregon Department of Environmental Quality" },
+        { bullet: "Former Portland Gas Manufacturing Site" },
+        { bullet: "Implementation of Remedial Action & Next Steps" },
+        { speaker: "Sarah Greenfield & Heidi Nelson" },
+        { cred: "Project Managers, Northwest region" },
+        { cred: "Oregon Department of Environmental Quality" }
       ],
-      ["2:00-2:15", "Break"],
+      ["2:00-2:15", { break: "Break" }],
       [
         "2:15-3:15",
-        "THREE PERSPECTIVES ON THE PORTLAND HARBOR",
-        "A Tribal Perspective",
-        "Michael Karnosh - Confederated Tribes of the Grand Ronde",
-        "Portland Harbor Community",
-        "Cassie Cohen - Portland Harbor Community Coalition",
-        "Property Owner/PRP Perspective",
-        "Bob Wyatt - Northwest Natural"
+        { title: "THREE PERSPECTIVES ON THE PORTLAND HARBOR" },
+        { bullet: "A Tribal Perspective" },
+        { speaker: "Michael Karnosh" },
+        { cred: "Confederated Tribes of the Grand Ronde" },
+        { bullet: "Portland Harbor Community" },
+        { speaker: "Cassie Cohen" },
+        { cred: "Portland Harbor Community Coalition" },
+        { bullet: "Property Owner/PRP Perspective" },
+        { speaker: "Bob Wyatt" },
+        { cred: "Northwest Natural" }
       ],
-      ["3:15-3:30", "Break"],
+      ["3:15-3:30", { break: "Break" }],
       [
         "3:30-4:30",
-        "PANEL DISCUSSION – CREATING A VISION & MOVING PROJECTS FORWARD",
-        "MODERATOR",
-        "Dennis McLerran - Cascadia Law Group",
-        "PANEL:",
-        "Cyndy Mackey - US EPA",
-        "Jim McKenna - Oregon Governor's Office",
-        "Kevin Parrett - Oregon DEQ",
-        "Michael Karnosh - Confederated Tribes of the Grand Ronde",
-        "Cassie Cohen - Portland Harbor Community Coalition",
-        "Bob Wyatt - Northwest Natural"
+        {
+          title:
+            "PANEL DISCUSSION – CREATING A VISION & MOVING PROJECTS FORWARD"
+        },
+        { bullet: "MODERATOR" },
+        { speaker: "Dennis McLerran" },
+        { cred: "Cascadia Law Group" },
+        { bullet: "PANEL:" },
+        { speaker: "Cyndy Mackey" },
+        { cred: "US EPA" },
+        { speaker: "Jim McKenna" },
+        { cred: "Oregon Governor's Office" },
+        { speaker: "Kevin Parrett" },
+        { cred: "Oregon DEQ" },
+        { speaker: "Michael Karnosh " },
+        { cred: "Confederated Tribes of the Grand Ronde" },
+        { speaker: "Cassie Cohen" },
+        { cred: "Portland Harbor Community Coalition" },
+        { speaker: "Bob Wyatt" },
+        { cred: "Northwest Natural" }
       ]
     ]
   },
