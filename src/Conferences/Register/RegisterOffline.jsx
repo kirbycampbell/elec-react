@@ -1,10 +1,105 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SmallMiddleSection from "../../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import SmallRegistrationBox from "./SmallRegistrationBox";
 import "./Register.css";
+import * as emailjs from "emailjs-com";
+const uuidv1 = require("uuid/v1");
 
 const RegisterOffline = props => {
+  const regId = uuidv1();
+  const [emailForm, setEmailForm] = useState({
+    regOrg: "",
+    regFirstName: "",
+    regLastName: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    suite: "",
+    city: "",
+    State: "",
+    Zip: "",
+    company: "",
+    tuition: "",
+    regCode: regId
+  });
+  const [success, setSuccess] = useState(null);
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    if (
+      event.target.lastName.value === "" ||
+      event.target.email.value === "" ||
+      event.target.tuition.value === ""
+    ) {
+      setSuccess(false);
+    } else {
+      setEmailForm({
+        firstName: event.target.firstName.value,
+        lastName: event.target.lastName.value,
+        email: event.target.email.value,
+        phone: event.target.phone.value,
+        address: event.target.address.value,
+        suite: event.target.suite.value,
+        city: event.target.city.value,
+        state: event.target.state.value,
+        zip: event.target.zip.value,
+        regOrg: event.target.regOrg.value,
+        regFirstName: event.target.regFirstName.value,
+        regLastName: event.target.regLastName.value,
+        company: event.target.company.value,
+        tuition: event.target.tuition.value
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (emailForm.name !== "") {
+      const emailTheForm = async () => {
+        if (emailForm.email.length > 4) {
+          emailjs
+            .send(
+              "mailgun",
+              "registration_form",
+              {
+                from: emailForm.email,
+                to: "johnkirbycampbell@gmail.com",
+                name: emailForm.firstName + " " + emailForm.lastName,
+                firstName: emailForm.firstName,
+                lastName: emailForm.lastName,
+                email: emailForm.email,
+                phone: emailForm.phone,
+                address: emailForm.address,
+                suite: emailForm.suite,
+                city: emailForm.city,
+                state: emailForm.state,
+                zip: emailForm.zip,
+                regOrg: emailForm.regOrg,
+                regFirstName: emailForm.regFirstName,
+                regLastName: emailForm.regLastName,
+                company: emailForm.company,
+                tuition: emailForm.tuition,
+                regCode: regId,
+                conf: props.conf.title,
+                confDate: props.conf.date
+              },
+              "user_EhT27SOB4XRGLQuTd22hG"
+            )
+            .then(
+              response => {
+                console.log("SUCCESS!", response.status, response.text);
+                setSuccess(true);
+              },
+              err => {
+                console.log("FAILED...", err);
+              }
+            );
+        }
+      };
+      emailTheForm();
+    }
+  }, [emailForm]);
   return (
     <div>
       {" "}
@@ -12,7 +107,12 @@ const RegisterOffline = props => {
       <div className="Main-Section">
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <SmallRegistrationBox agenda={props.conf.agenda} />
+            <div className="Single-Col">
+              <SmallRegistrationBox
+                agenda={props.conf.agenda}
+                reg={props.conf.registration}
+              />
+            </div>
           </div>
 
           <div className="Body-Right">
@@ -32,174 +132,201 @@ const RegisterOffline = props => {
               Conference Details
             </Link>
             <div className="Outer-Form">
-              <form
-                action={
-                  process.env.PUBLIC_URL +
-                  "/check-submit-2019-09-12-advanced-superfund.php"
-                }
-                method="post"
-              >
-                <div>
-                  <input type="hidden" name="ssl_merchant_id" value="514710" />
-                  <input type="hidden" name="ssl_user_id" value="website" />
-                  <input
-                    type="hidden"
-                    name="ssl_pin"
-                    value="62RTPVBJ9Y3CSNRYJQ458Q7V3M3V27N1FO60ZLY3S30KBITBC4T5KUW9OUOS3YLP"
-                  />
-                  <input type="hidden" name="ssl_show_form" value="true" />
-                  <input
-                    type="hidden"
-                    name="ssl_transaction_type"
-                    value="ccsale"
-                  />
-                  <input
-                    type="hidden"
-                    name="ssl_description"
-                    value="2019 Adanced Superfund Conference"
-                  />
-                  <input type="hidden" name="ssl_customer_code" value="1" />
-                  <input type="hidden" name="ssl_salestax" value="0.00" />
-                  <input
-                    type="hidden"
-                    name="ssl_cvv2cvc2_indicator"
-                    value="present"
-                  />
+              {!success && (
+                <form id="myForm" onSubmit={handleFormSubmit}>
                   <div>
-                    <h1 className="Register-Title">Register</h1>
-                    <div className="Tiny-Text">
-                      Registration Secured by Evalon
-                    </div>
-
-                    <input
-                      className="Input-Style"
-                      name="ssl_organization"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Organization"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_reg_first_name"
-                      type="text"
-                      maxLength="20"
-                      placeholder="Registrant First Name"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_reg_last_name"
-                      type="text"
-                      maxLength="30"
-                      placeholder="Registrant Last Name"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_email"
-                      type="email"
-                      maxLength="50"
-                      placeholder="Registrant's E-mail address"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_organization"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Organization"
-                    />
-                    <div className="Bigger-Text">Card Holder Information</div>
-                    <input
-                      className="Input-Style"
-                      name="ssl_company"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Company or Organization"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_first_name"
-                      type="text"
-                      maxLength="40"
-                      placeholder="First Name"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_last_name"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Last Name"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_avs_address"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Billing Address"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_address2"
-                      type="text"
-                      maxLength="40"
-                      placeholder="Suite"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_city"
-                      type="text"
-                      maxLength="40"
-                      placeholder="City"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_state"
-                      type="text"
-                      maxLength="40"
-                      placeholder="State"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_avs_zip"
-                      type="text"
-                      maxLength="12"
-                      placeholder="Zip"
-                    />
-                    <input
-                      className="Input-Style"
-                      name="ssl_phone"
-                      type="text"
-                      maxLength="14"
-                      placeholder="Phone"
-                    />
-                    <div className="Radio-Section">
-                      <input type="radio" name="ssl_amount" value="550.00" />
-                      $550 early registration
-                      <br />
-                      <input type="radio" name="ssl_amount" value="595.00" />
-                      $595 if received after August 30, 2019
-                      <br />
-                      <input type="radio" name="ssl_amount" value="450.00" />
-                      $450 government &amp; non-profit rate
-                      <br />
-                      <input type="radio" name="ssl_amount" value="495.00" />
-                      $495 government & non-profit received after August 30,
-                      2019
-                      <br />
+                    <div>
+                      <h1 className="Register-Title">
+                        Register Online & Mail Check
+                      </h1>
+                      Reference Number: {regId}
                       <div className="Tiny-Text">
-                        QUESTIONS: 503/282-5220 Registration Secured by Evalon
-                        Cancellation: Refunds, less $50, will be made for
-                        cancellations received in writing by September 6, 2019.
-                        MCLE Credits available for members of the Oregon State
-                        Bar.
+                        Important: Write this number down or print page before
+                        clicking the Register Now button
                       </div>
                       <input
-                        name="submit"
-                        type="submit"
-                        value="Proceed to Secure Registration page"
+                        className="Input-Style"
+                        name="regOrg"
+                        id="regOrg"
+                        type="text"
+                        maxLength="40"
+                        placeholder="Organization"
                       />
+                      <input
+                        className="Input-Style"
+                        name="regFirstName"
+                        id="regFirstName"
+                        type="text"
+                        maxLength="20"
+                        placeholder="Registrant First Name"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="regLastName"
+                        id="regLastName"
+                        type="text"
+                        maxLength="30"
+                        placeholder="Registrant Last Name"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="email"
+                        id="email"
+                        type="email"
+                        maxLength="50"
+                        placeholder="Registrant's E-mail address"
+                      />
+                      <div className="Bigger-Text">Card Holder Information</div>
+                      <input
+                        className="Input-Style"
+                        name="company"
+                        id="company"
+                        type="text"
+                        maxLength="40"
+                        placeholder="Company or Organization"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="firstName"
+                        id="firstName"
+                        type="text"
+                        maxLength="40"
+                        placeholder="First Name"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="lastName"
+                        id="lastName"
+                        type="text"
+                        maxLength="40"
+                        placeholder="Last Name"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="address"
+                        id="address"
+                        type="text"
+                        maxLength="40"
+                        placeholder="Billing Address"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="suite"
+                        id="suite"
+                        type="text"
+                        maxLength="40"
+                        placeholder="Suite"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="city"
+                        id="city"
+                        type="text"
+                        maxLength="40"
+                        placeholder="City"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="state"
+                        id="state"
+                        type="text"
+                        maxLength="40"
+                        placeholder="State"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="zip"
+                        id="zip"
+                        type="text"
+                        maxLength="12"
+                        placeholder="Zip"
+                      />
+                      <input
+                        className="Input-Style"
+                        name="phone"
+                        id="phone"
+                        type="text"
+                        maxLength="14"
+                        placeholder="Phone"
+                      />
+                      <div className="Radio-Section">
+                        <input
+                          type="radio"
+                          name="tuition"
+                          id="tuition"
+                          value="550.00"
+                        />
+                        $550 early registration
+                        <br />
+                        <input
+                          type="radio"
+                          name="tuition"
+                          id="tuition"
+                          value="595.00"
+                        />
+                        $595 if received after August 30, 2019
+                        <br />
+                        <input
+                          type="radio"
+                          name="tuition"
+                          id="tuition"
+                          value="450.00"
+                        />
+                        $450 government &amp; non-profit rate
+                        <br />
+                        <input
+                          type="radio"
+                          name="tuition"
+                          id="tuition"
+                          value="495.00"
+                        />
+                        $495 government & non-profit received after August 30,
+                        2019
+                        <br />
+                        <div className="Tiny-Text">
+                          QUESTIONS: 503/282-5220 <br />
+                          Please mail check asap and include reference number on
+                          check
+                          <br />
+                          Cancellation: Refunds, less $50, will be made for
+                          cancellations received in writing by September 6,
+                          2019.
+                          <br />
+                          <br />
+                          Write down reference number, or print page, before
+                          clicking Register Now button. Include reference number
+                          on check. Thank you.
+                        </div>
+                        {!success && (
+                          <input
+                            name="submit"
+                            type="submit"
+                            value="Submit Offline Registration"
+                          />
+                        )}
+                        {success && (
+                          <input
+                            name="submit"
+                            type="submit"
+                            value="Successfully Submitted Registration!"
+                            disabled={true}
+                          />
+                        )}
+                      </div>
                     </div>
                   </div>
+                </form>
+              )}
+              {success && (
+                <div className="Successful Registration">
+                  You Have successfully registered for {props.conf.title}!
+                  <br />
+                  Your Registration info has been emailed to you at{" "}
+                  {emailForm.email}. Keep your registration code: {regId}
+                  <br />
+                  Thank you!
                 </div>
-              </form>
+              )}
             </div>
           </div>
         </div>

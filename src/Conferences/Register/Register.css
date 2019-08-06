@@ -5,7 +5,7 @@ input.Input-Style {
   padding: 0px 10px;
 }
 .Topic-Title-Reg {
-  font-family: 'Sakkal Majalla';
+  font-family: "Sakkal Majalla";
   font-size: 38px;
   line-height: 38px;
   color: #376831;
@@ -45,4 +45,10 @@ input.Input-Style {
   padding: 20px;
   border-radius: 10px;
   margin: 10px 0px;
+}
+
+.Single-Col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SmallMiddleSection from "../01_Static_Components/SmallMiddleSection/SmallMiddleSection";
 import UpcomingConf from "../Conferences/UpcomingConf";
 import "./Contact.css";
-import axios from "axios";
+import * as emailjs from "emailjs-com";
 
 const Contact = props => {
   const [emailForm, setEmailForm] = useState({
@@ -38,18 +38,40 @@ const Contact = props => {
   useEffect(() => {
     if (emailForm.name !== "") {
       const emailTheForm = async () => {
-        // await axios
-        //   .post("http://localhost:5000/api/email/", {
-        await axios
-          .post("https://master.d3u91gpoa9xh2v.amplifyapp.com/api/email/", {
-            emailForm
-          })
-          .then(res => {
-            setSuccess(true);
-          })
-          .catch(err => {
-            setSuccess(false);
-          });
+        if (emailForm.email.length > 4) {
+          emailjs
+            .send(
+              "mailgun",
+              "template_Kcms06g3",
+              {
+                from: emailForm.email,
+                to: "johnkirbycampbell@gmail.com",
+                name: emailForm.name,
+                subject: `Message from ${emailForm.name}`,
+                text: `<div><h1>Message from ${emailForm.name}</h1><p>${
+                  emailForm.comment
+                }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
+                  emailForm.phone
+                }<br />${emailForm.address} ${
+                  emailForm.cityStateZip
+                }</p></div>`,
+                html: `<div><h1>Message from ${emailForm.name}</h1><p>${
+                  emailForm.comment
+                }</p><br /> <p>Contact User at: <br />${emailForm.email}<br />${
+                  emailForm.phone
+                }<br />${emailForm.address} ${emailForm.cityStateZip}</p></div>`
+              },
+              "user_EhT27SOB4XRGLQuTd22hG"
+            )
+            .then(
+              response => {
+                console.log("SUCCESS!", response.status, response.text);
+              },
+              err => {
+                console.log("FAILED...", err);
+              }
+            );
+        }
       };
       emailTheForm();
     }
@@ -85,7 +107,7 @@ const Contact = props => {
               <div className="Form-Title">Contact Us Online</div>
               <div>
                 <div>
-                  <form onSubmit={handleFormSubmit}>
+                  <form id="myForm" onSubmit={handleFormSubmit}>
                     <label>Your Name*</label>
                     <input
                       type="text"
@@ -129,9 +151,21 @@ const Contact = props => {
                       name="comment"
                       placeholder="Write something.."
                     />
-                    <input type="submit" value="Submit" />
-                    {success === true && <div>Email Sent!</div>}
-                    {success === false && <div>Failed to Send!</div>}
+                    {!success && (
+                      <input
+                        name="submit"
+                        type="submit"
+                        value="Submit Message"
+                      />
+                    )}
+                    {success && (
+                      <input
+                        name="submit"
+                        type="submit"
+                        value="Successfully Sent Message!"
+                        disabled={true}
+                      />
+                    )}
                   </form>
                 </div>
               </div>

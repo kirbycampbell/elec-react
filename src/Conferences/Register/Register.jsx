@@ -12,7 +12,12 @@ const Register = props => {
       <div className="Main-Section">
         <div className="Outer-Body">
           <div className="UpcomingConf">
-            <SmallRegistrationBox agenda={props.conf.agenda} />
+            <div className="Single-Col">
+              <SmallRegistrationBox
+                agenda={props.conf.agenda}
+                reg={props.conf.registration}
+              />
+            </div>
           </div>
 
           <div className="Body-Right">
@@ -63,7 +68,7 @@ const Register = props => {
                     value="present"
                   />
                   <div>
-                    <h1 className="Register-Title">Register</h1>
+                    <h1 className="Register-Title">Register & Pay Online</h1>
                     <div className="Tiny-Text">
                       Registration Secured by Evalon
                     </div>
