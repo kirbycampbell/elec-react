@@ -89,7 +89,7 @@ function App() {
             />
 
             <Route
-              path="/Register/"
+              path="/online-reg/conference.htm"
               render={props => (
                 <Register conf={confList[0]} setConf={setConf} />
               )}

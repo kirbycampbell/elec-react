@@ -38,11 +38,10 @@ const Contact = props => {
   useEffect(() => {
     if (emailForm.name !== "") {
       const emailTheForm = async () => {
+        // await axios
+        //   .post("http://localhost:5000/api/email/", {
         await axios
-          .post("http://localhost:5000/api/email/", {
-            // await axios.post(
-            //   "https://master.d3u91gpoa9xh2v.amplifyapp.com/api/email/",
-            //   {
+          .post("https://master.d3u91gpoa9xh2v.amplifyapp.com/api/email/", {
             emailForm
           })
           .then(res => {

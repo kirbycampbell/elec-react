@@ -1,10 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import './MobileNav.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./MobileNav.css";
 const MobileNav = props => {
   return (
     <div
-      className={'Outer-MobileNav ' + (props.mobileMenu ? 'show' : 'hidden')}
+      className={"Outer-MobileNav " + (props.mobileMenu ? "show" : "hidden")}
     >
       <Link
         className="Mobile-nav-link"
@@ -53,7 +53,7 @@ const MobileNav = props => {
       </Link>
       <Link
         className="Mobile-nav-link"
-        to="/Register"
+        to="/online-reg/conference.htm"
         onClick={() => {
           props.setMobileMenu(false);
         }}

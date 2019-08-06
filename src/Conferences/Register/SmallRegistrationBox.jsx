@@ -1,11 +1,11 @@
-import React from 'react';
-import './SmallBox.css';
-import {Link} from 'react-router-dom';
+import React from "react";
+import "./SmallBox.css";
+import { Link } from "react-router-dom";
 
 const SmallRegistrationBox = props => {
   return (
     <div className="Outer-Small-Box">
-      {props.reg &&
+      {props.reg && (
         <div>
           <div className="Title-Small-Box">Registration</div>
           <div className="Inner-Small-Box">
@@ -14,7 +14,7 @@ const SmallRegistrationBox = props => {
                 Secure online registration with credit card:
               </div>
               <button className="Small-Box-BTN">
-                <Link to="/Register/">Register online</Link>
+                <Link to="/online-reg/conference.htm">Register online</Link>
               </button>
             </div>
             <div className="Register-Section">
@@ -22,15 +22,12 @@ const SmallRegistrationBox = props => {
                 Register online w/o credit card (mail check):
               </div>
               <button className="Small-Box-BTN">
-                {' '}  <Link to="/Register-Offline/">Register</Link>
+                {" "}
+                <Link to="/Register-Offline/">Register</Link>
               </button>
             </div>
             <div className="Register-Section">
-              <div className="Small-Text-Box">
-
-                Registration by fax or mail:
-
-              </div>
+              <div className="Small-Text-Box">Registration by fax or mail:</div>
               <button className="Small-Box-BTN">
                 <a href={process.env.PUBLIC_URL + `/agenda-pdfs/${props.reg}`}>
                   Printable Form
@@ -38,12 +35,12 @@ const SmallRegistrationBox = props => {
               </button>
             </div>
           </div>
-        </div>}
-      {props.agenda &&
+        </div>
+      )}
+      {props.agenda && (
         <div>
           <div className="Title-Small-Box">Conference Agenda</div>
           <div className="Inner-Small-Box">
-
             <div className="Register-Section">
               <div className="Small-Text-Box">Agenda Printout</div>
               <button className="Small-Box-BTN">
@@ -55,7 +52,8 @@ const SmallRegistrationBox = props => {
               </button>
             </div>
           </div>
-        </div>}
+        </div>
+      )}
     </div>
   );
 };
